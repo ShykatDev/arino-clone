@@ -1,9 +1,10 @@
 nav {
   @include basicStyle(10vh, 0, 20rem);
-  background: $navBg;
   position: fixed;
   top: 0;
   left: 0;
+  transition: 0.3s;
+  z-index: 100;
 
   .desktop-nav {
     width: 100%;
@@ -116,211 +117,216 @@ nav {
         }
       }
     }
-  }
-}
 
-.sideBar {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  right: 0%;
-  transition: 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  background: #18181871;
-  @include flexStyles(end, center);
-
-  .sidebar-content {
-    background: $bg;
-    width: 28%;
-    height: 100%;
-    padding: 5rem 4rem;
-    position: relative;
-    overflow: hidden;
-    transform: translateX(100%);
-    transition: 0.3s;
-
-    .close-sideBar {
+    .sideBar {
+      width: 100%;
+      height: 100vh;
       position: absolute;
-      right: 2rem;
-      top: 2rem;
-      font-size: 1.8rem;
-      color: $heading;
-      cursor: pointer;
-    }
+      top: 0;
+      right: 0%;
+      transition: 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      background: #18181871;
+      @include flexStyles(end, center);
+      z-index: 100;
 
-    .title {
-      margin-bottom: 4rem;
+      .sidebar-content {
+        background: $bg;
+        width: 28%;
+        height: 100%;
+        padding: 5rem 4rem;
+        position: relative;
+        overflow: hidden;
+        transform: translateX(100%);
+        transition: 0.3s;
 
-      h1 {
-        font-size: 2.3rem;
-        color: $heading;
-        font-family: $openSans;
-        span {
-          color: $orange;
-        }
-      }
-      h2 {
-        margin-top: 1rem;
-        color: $heading;
-        font-family: $popins;
-      }
-    }
-    .contant-info {
-      margin-bottom: 4rem;
-
-      h3 {
-        color: $heading;
-        font-family: $popins;
-        font-weight: 600;
-        margin-bottom: 2rem;
-      }
-      ul {
-        li {
-          list-style: none;
-          @include flexStyles(start, center);
-          gap: 1rem;
-          margin-bottom: 1rem;
-          p {
-            color: $text;
-          }
-          .io {
-            color: $orange;
-            font-size: 1.4rem;
-          }
-        }
-      }
-    }
-
-    .subscription {
-      margin-bottom: 5rem;
-      h3 {
-        color: $heading;
-        font-family: $popins;
-        font-weight: 600;
-        margin-bottom: 2rem;
-      }
-
-      .form-el {
-        width: 100%;
-        height: auto;
-        background: #000;
-        border-radius: 0.7rem;
-        @include flexStyles(space-between, center);
-        gap: 1rem;
-        padding: 0.3rem;
-        margin-bottom: 1.5rem;
-
-        input {
-          width: 70%;
-          height: 2.7rem;
-          background: none;
-          border: none;
-          outline: none;
-          padding-left: 1.5rem;
-          font-size: 1rem;
-          //   z-index: 20;
+        .close-sideBar {
+          position: absolute;
+          right: 2rem;
+          top: 2rem;
+          font-size: 1.8rem;
           color: $heading;
-        }
-        button {
-          width: 22%;
-          height: 2.7rem;
-          border-radius: 0.5rem;
-          border: none;
-          outline: none;
-          background: $orange;
-          color: $heading;
-          font-size: 1em;
           cursor: pointer;
-          position: relative;
-          overflow: hidden;
-          transition: 0.3s;
+        }
 
-          p {
-            color: white;
+        .title {
+          margin-bottom: 4rem;
+
+          h1 {
+            font-size: 2.3rem;
+            color: $heading;
+            font-family: $openSans;
+            span {
+              color: $orange;
+            }
           }
-
-          &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: #00000068;
-            transform: translateX(-100%);
+          h2 {
+            margin-top: 1rem;
+            color: $heading;
+            font-family: $popins;
           }
+        }
+        .contant-info {
+          margin-bottom: 4rem;
 
-          &:hover:after {
-            animation: btn-hover 0.7s linear forwards;
-
-            @keyframes btn-hover {
-              50% {
-                transform: translateX(0%);
+          h3 {
+            color: $heading;
+            font-family: $popins;
+            font-weight: 600;
+            margin-bottom: 2rem;
+          }
+          ul {
+            li {
+              list-style: none;
+              @include flexStyles(start, center);
+              gap: 1rem;
+              margin-bottom: 1rem;
+              p {
+                color: $text;
               }
-              80% {
-                transform: translateX(-15%);
-              }
-              100% {
-                transform: translateX(0%);
+              .io {
+                color: $orange;
+                font-size: 1.4rem;
               }
             }
           }
         }
-      }
-      p {
-        color: $text;
+
+        .subscription {
+          margin-bottom: 5rem;
+          h3 {
+            color: $heading;
+            font-family: $popins;
+            font-weight: 600;
+            margin-bottom: 2rem;
+          }
+
+          .form-el {
+            width: 100%;
+            height: auto;
+            background: #000;
+            border-radius: 0.7rem;
+            @include flexStyles(space-between, center);
+            gap: 1rem;
+            padding: 0.3rem;
+            margin-bottom: 1.5rem;
+
+            input {
+              width: 70%;
+              height: 2.7rem;
+              background: none;
+              border: none;
+              outline: none;
+              padding-left: 1.5rem;
+              font-size: 1rem;
+              //   z-index: 20;
+              color: $heading;
+            }
+            button {
+              width: 22%;
+              height: 2.7rem;
+              border-radius: 0.5rem;
+              border: none;
+              outline: none;
+              background: $orange;
+              color: $heading;
+              font-size: 1em;
+              cursor: pointer;
+              position: relative;
+              overflow: hidden;
+              transition: 0.3s;
+
+              p {
+                color: white;
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: #00000068;
+                transform: translateX(-100%);
+              }
+
+              &:hover:after {
+                animation: btn-hover 0.7s linear forwards;
+
+                @keyframes btn-hover {
+                  50% {
+                    transform: translateX(0%);
+                  }
+                  80% {
+                    transform: translateX(-15%);
+                  }
+                  100% {
+                    transform: translateX(0%);
+                  }
+                }
+              }
+            }
+          }
+          p {
+            color: $text;
+          }
+        }
+
+        .social-sites {
+          width: 100%;
+          @include flexStyles(start, center);
+          gap: 0.8rem;
+
+          .social-io-border {
+            border: 2px solid $heading;
+            padding: 0.3rem 0.3rem;
+            border-radius: 50%;
+            background: none;
+            @include flexStyles(center, center);
+            transition: 0.3s ease-in;
+            cursor: pointer;
+
+            .social-io {
+              font-size: 1.5rem;
+              color: $heading;
+              transition: 0.2s;
+              overflow: hidden;
+              cursor: pointer;
+              padding: 0.2rem;
+            }
+
+            &:hover {
+              border: 2px solid $orange;
+            }
+          }
+        }
+
+        .darkCircle {
+          position: absolute;
+          width: 15rem;
+          height: 15rem;
+          background: $navBg;
+          border-radius: 50%;
+          bottom: 0%;
+          right: 0%;
+          transform: translate(30%, 30%);
+        }
       }
     }
 
-    .social-sites {
-      width: 100%;
-      @include flexStyles(start, center);
-      gap: 0.8rem;
+    .sideBar.hide {
+      visibility: visible;
+      opacity: 1;
 
-      .social-io-border {
-        border: 2px solid $heading;
-        padding: 0.3rem 0.3rem;
-        border-radius: 50%;
-        background: none;
-        @include flexStyles(center, center);
-        transition: 0.3s ease-in;
-        cursor: pointer;
-
-        .social-io {
-          font-size: 1.5rem;
-          color: $heading;
-          transition: 0.2s;
-          overflow: hidden;
-          cursor: pointer;
-          padding: 0.2rem;
-        }
-
-        &:hover {
-          border: 2px solid $orange;
-        }
+      .sidebar-content {
+        transform: translateX(0%);
       }
-    }
-
-    .darkCircle {
-      position: absolute;
-      width: 15rem;
-      height: 15rem;
-      background: $navBg;
-      border-radius: 50%;
-      bottom: 0%;
-      right: 0%;
-      transform: translate(30%, 30%);
     }
   }
 }
 
-.sideBar.hide {
-  visibility: visible;
-  opacity: 1;
-
-  .sidebar-content {
-    transform: translateX(0%);
-  }
+nav.navActive {
+  background: $navBg;
 }

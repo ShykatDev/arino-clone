@@ -30,11 +30,79 @@ $popins: "Poppins", sans-serif;
 body {
   overflow-x: hidden;
   font-family: $popins;
+  background: $bg;
 }
 
 a {
   text-decoration: none;
 }
 
+.special-btn {
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  color: $heading;
+  padding-bottom: 0.2rem;
+  @include flexStyles(start, center);
+  gap: 1rem;
+  font-family: $openSans;
+
+  .arrowRight {
+    color: $heading;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: $orange;
+    transform: translateX(-100%);
+  }
+
+  &:hover:after {
+    animation: btn-hover 0.7s linear forwards;
+
+    @keyframes btn-hover {
+      50% {
+        transform: translateX(0%);
+      }
+      80% {
+        transform: translateX(-15%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &:hover {
+    .arrowRight {
+      color: $orange;
+    }
+
+    color: $orange;
+  }
+}
+
+h1{
+  font-family: $popins;
+  font-weight: 600;
+}
+
 @import "./componentStyles/cursor";
 @import "./componentStyles/navbar";
+@import "./home/homepage";
+@import "./home/service";

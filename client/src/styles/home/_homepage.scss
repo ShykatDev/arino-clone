@@ -1,0 +1,150 @@
+header {
+  @include basicStyle(auto, 0rem, 0rem);
+  position: relative;
+
+  .header-content {
+    width: 100%;
+    min-height: 120vh;
+    padding: 10rem 20rem;
+    overflow: hidden;
+    .header-bg {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -5;
+    }
+
+    .bigText {
+      font-size: 7rem;
+      color: $heading;
+      font-family: $popins;
+      margin-top: 5rem;
+    }
+
+    .subTitle {
+      width: 100%;
+      height: auto;
+      @include flexStyles(space-between, center);
+      margin-top: 5rem;
+
+      p {
+        width: 50%;
+        font-size: 1.2rem;
+        color: $heading;
+        font-family: $openSans;
+      }
+
+      
+    }
+
+    .scroll-io {
+      width: 100%;
+      height: auto;
+      @include flexStyles(center, center);
+      margin-top: 7rem;
+
+      .outer {
+        width: 20px;
+        height: 35px;
+        border: 1px solid $heading;
+        border-radius: 20px;
+        @include flexStyles(center, start);
+
+        .inner {
+          transform: translateY(8px);
+          width: 5px;
+          height: 5px;
+          background: $heading;
+          border-radius: 50%;
+
+          animation: scroll 1s linear infinite;
+          animation-direction: alternate;
+
+          @keyframes scroll {
+            100% {
+              transform: translateY(20px);
+              opacity: 0.3;
+            }
+          }
+        }
+      }
+    }
+
+    .social-links {
+      @include flexStyles(start, center);
+      gap: 1rem;
+      font-family: $popins;
+      position: absolute;
+      right: -7%;
+      top: 40%;
+      transform: translate(10%, -40%);
+      transform: rotate(-90deg);
+
+      p {
+        color: $heading;
+      }
+
+      a {
+        color: $heading;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+
+    .rec {
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 16px solid $orange;
+      position: absolute;
+    }
+
+    .rec1 {
+      top: 30%;
+      left: 10%;
+      animation: rec1 3s linear infinite;
+      animation-direction: alternate;
+
+      @keyframes rec1 {
+        100% {
+          top: 32%;
+          transform: rotate(-30deg);
+        }
+      }
+    }
+    .rec2 {
+      top: 35%;
+      right: 30%;
+      animation: rec2 2s linear infinite;
+      animation-direction: alternate;
+
+      @keyframes rec2 {
+        100% {
+          top: 38%;
+          transform: rotate(-30deg);
+        }
+      }
+    }
+    .rec3 {
+      bottom: 25%;
+      left: 35%;
+      animation: rec3 3s linear infinite;
+      animation-delay: 1s;
+      animation-direction: alternate;
+
+      @keyframes rec3 {
+        100% {
+          left: 32%;
+          transform: rotate(-30deg);
+        }
+      }
+    }
+  }
+}

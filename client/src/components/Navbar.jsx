@@ -17,10 +17,22 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+  const [navClr, setNavClr] = useState(false);
+
   const navigate = useNavigate();
 
+  const changeNavColor = () => {
+    if (window.scrollY >= 80) {
+      setNavClr(true);
+    } else {
+      setNavClr(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeNavColor);
+
   return (
-    <nav>
+    <nav className={navClr && "navActive"}>
       <div className="desktop-nav">
         <div
           className="logo"

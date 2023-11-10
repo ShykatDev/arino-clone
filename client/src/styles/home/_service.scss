@@ -1,0 +1,174 @@
+#home-service {
+  @include basicStyle(85vh, 0rem, 20rem);
+  background: $bg;
+  position: relative;
+
+  .highlight-sec {
+    width: 67%;
+    height: 32vh;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    @include flexStyles(space-between, center);
+    gap: 5rem;
+    padding: 0 5rem;
+    overflow: hidden;
+    background: linear-gradient(to right, #000, #101010);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -10%;
+      left: 20%;
+      background-image: url("../../assets/wave.png");
+      z-index: -1;
+      background-position: center;
+      background-size: 70%;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+    }
+
+    .left-col {
+      width: 40%;
+      h1 {
+        font-size: 3rem;
+        color: $heading;
+        font-family: $popins;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: $text;
+        font-family: $openSans;
+      }
+    }
+    .right-col {
+      width: 60%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2rem;
+
+      .item {
+        width: 100%;
+        @include flexStyles(start, center);
+        gap: 1rem;
+
+        h1 {
+          font-size: 3.5rem;
+          color: $heading;
+          font-family: $popins;
+        }
+
+        div {
+          p:first-child {
+            color: $orange;
+            font-size: 1.3rem;
+          }
+          p {
+            color: $text;
+            font-family: $openSans;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .what-we-can-do {
+    padding-top: 35vh;
+    width: 100%;
+    font-family: $popins;
+    @include flexStyles(space-between, start);
+
+    .left-col {
+      width: 35%;
+      p {
+        font-weight: bold;
+        color: $text;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      h1 {
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+        color: $heading;
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    .right-col {
+      width: 65%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1rem;
+
+      .card-item {
+        width: 100%;
+        height: 12rem;
+        border-radius: 0.5rem;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        @include flexStyles(center, start);
+        flex-direction: column;
+        padding: 0 1.5rem;
+        gap: 0.5rem;
+        overflow: hidden;
+        transition: all 0.3s;
+
+        .dot {
+          width: 0.7rem;
+          height: 0.7rem;
+          background: $orange;
+          border-radius: 50%;
+          z-index: 2;
+        }
+        h2 {
+          color: $heading;
+          font-family: $popins;
+          z-index: 2;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+      .card-item.digital,
+      .card-item.ui,
+      .card-item.tech,
+      .card-item.react {
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0px 0px 70px #ff420ead;
+        }
+
+        &::before {
+          background: #00000092;
+        }
+      }
+      .card-item.digital {
+        background-image: url("../../assets/digital.png");
+      }
+      .card-item.ui {
+        background-image: url("../../assets/ui.jpg");
+      }
+      .card-item.tech {
+        background-image: url("../../assets/tech.png");
+      }
+      .card-item.react {
+        background-image: url("../../assets/react.png");
+      }
+    }
+  }
+}
