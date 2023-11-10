@@ -5,7 +5,8 @@
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  transition: all 0.2s;
+  transition: all 0.1s ease-in-out;
+  z-index: 10;
 }
 
 .cursor-point {
@@ -15,6 +16,7 @@
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  transition: all 0.1s;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
 
 }

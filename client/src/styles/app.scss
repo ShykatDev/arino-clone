@@ -4,7 +4,7 @@ $orange: #ff4a17;
 $bg: #181818;
 $navBg: #000000;
 $heading: #fefefe;
-$text: #999696;
+$text: #b3b3b3;
 
 $openSans: "Open Sans", sans-serif;
 $popins: "Poppins", sans-serif;
@@ -27,5 +27,14 @@ $popins: "Poppins", sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+  font-family: $popins;
+}
 
-@import "./componentStyles/_cursor";
+a {
+  text-decoration: none;
+}
+
+@import "./componentStyles/cursor";
+@import "./componentStyles/navbar";
