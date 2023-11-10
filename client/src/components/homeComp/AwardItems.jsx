@@ -21,7 +21,7 @@ const AwardItems = () => {
         <p>Website of the day</p>
         <p>Desktop exelence</p>
       </div>
-      <div className="aw-item">
+      <div className="aw-item"></div>
         <h2>2022</h2>
         <h3>UI/UX design of the month</h3>
         <p>Website of the day</p>
