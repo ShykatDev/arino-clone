@@ -1,0 +1,75 @@
+#home-awards {
+  @include basicStyle(60vh, 5rem, 20rem);
+  background: $bg;
+  position: relative;
+  @include flexStyles(space-between, start);
+  gap: 5rem;
+
+  .big-rec {
+    width: 0;
+    height: 0;
+    border-left: 0rem solid transparent;
+    border-right: 20rem solid transparent;
+    border-bottom: 20rem solid $navBg;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(60%, -60%) rotate(45deg);
+    animation: big-rect 2s linear infinite;
+    animation-direction: alternate;
+
+    @keyframes big-rect {
+      100% {
+        transform: translate(55%, -60%) rotate(45deg);
+      }
+    }
+  }
+
+  .left-col {
+    width: 35%;
+
+    p {
+      color: $text;
+      font-family: $openSans;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  .right-col {
+    width: 60%;
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 0 1rem;
+
+      .aw-item {
+        width: 100%;
+        height: auto;
+
+        h2 {
+          font-size: 2rem;
+          color: $orange;
+          font-family: $popins;
+          font-weight: 600;
+        }
+        h3 {
+          font-size: 1.5rem;
+          color: $heading;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          font-family: $popins;
+        }
+        p {
+          color: $text;
+        }
+      }
+    }
+  }
+}
