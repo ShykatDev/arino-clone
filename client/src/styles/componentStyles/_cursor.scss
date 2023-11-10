@@ -1,0 +1,20 @@
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid $orange;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+}
+
+.cursor-point {
+  width: 10px;
+  height: 10px;
+  background: $orange;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s;
+
+}

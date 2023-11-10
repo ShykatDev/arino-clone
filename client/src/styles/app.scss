@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$orange: #ff4a17;
+$bg: #181818;
+$navBg: #000000;
+$heading: #fefefe;
+$text: #999696;
+
+$openSans: "Open Sans", sans-serif;
+$popins: "Poppins", sans-serif;
+
+//Same Code------------------------------
+@mixin basicStyle($height, $yPadding, $xPadding) {
+  width: 100%;
+  height: $height;
+  padding: $yPadding $xPadding;
+}
+
+@mixin flexStyles($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "./componentStyles/_cursor";
