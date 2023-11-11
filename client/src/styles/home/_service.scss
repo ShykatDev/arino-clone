@@ -1,5 +1,5 @@
 #home-service {
-  @include basicStyle(90vh, 0rem, 20rem);
+  @include basicStyle(auto, 5rem, 20rem);
   background: $bg;
   position: relative;
 
@@ -79,7 +79,7 @@
   }
 
   .what-we-can-do {
-    padding-top: 35vh;
+    padding-top: 25vh;
     width: 100%;
     font-family: $popins;
     @include flexStyles(space-between, start);

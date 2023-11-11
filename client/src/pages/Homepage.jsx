@@ -4,6 +4,7 @@ import Service from "../components/homeComp/Service";
 import Projects from "../components/homeComp/Projects";
 import Awards from "../components/homeComp/Awards";
 import Videopopup from "../components/homeComp/Videopopup";
+import Team from "../components/homeComp/Team";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <Projects />
       <Awards />
       <Videopopup />
+      <Team />
     </>
   );
 };

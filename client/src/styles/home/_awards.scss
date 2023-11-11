@@ -1,5 +1,5 @@
 #home-awards {
-  @include basicStyle(60vh, 5rem, 20rem);
+  @include basicStyle(auto, 5rem, 20rem);
   background: $bg;
   position: relative;
   @include flexStyles(space-between, start);
